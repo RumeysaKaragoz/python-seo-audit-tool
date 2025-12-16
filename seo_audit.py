@@ -23,10 +23,25 @@ else:
 if meta_description and meta_description.get("content"):
     length = len(description)
     if length < 50:
-        print("⚠️ Meta description çok kısa.")
+        print("Meta description çok kısa.")
     elif length > 160:
-        print("⚠️ Meta description çok uzun.")
+        print("Meta description çok uzun.")
     else:
-        print("✅ Meta description uzunluğu ideal.")
+        print("Meta description uzunluğu ideal.")
 
+h1_tags = soup.find_all("h1")
+h2_tags = soup.find_all("h2")
+
+print("\nH1 Analizi:")
+print("H1 sayısı:", len(h1_tags))
+
+if len(h1_tags) == 0:
+    print("H1 etiketi bulunamadı.")
+elif len(h1_tags) == 1:
+    print("H1 etiketi ideal (1 adet).")
+else:
+    print("Birden fazla H1 etiketi var.")
+
+print("\nH2 Analizi:")
+print("H2 sayısı:", len(h2_tags))
                 
