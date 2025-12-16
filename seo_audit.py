@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+print("\n--- SEO AUDIT REPORT ---\n")
 
 url = input("Analiz edilecek URL'yi girin: ")
 
@@ -60,3 +61,4 @@ if len(images_without_alt) == 0:
     print("Tüm görsellerde alt etiketi var.")
 else:
     print("Bazı görsellerde alt etiketi eksik.")
+print("\n--- ANALİZ TAMAMLANDI ---")
