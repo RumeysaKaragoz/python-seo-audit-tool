@@ -45,3 +45,18 @@ else:
 print("\nH2 Analizi:")
 print("H2 sayısı:", len(h2_tags))
                 
+images = soup.find_all("img")
+images_without_alt = []
+
+for img in images:
+    if not img.get("alt"):
+        images_without_alt.append(img)
+
+print("\nGörsel Analizi:")
+print("Toplam görsel sayısı:", len(images))
+print("Alt etiketi olmayan görseller:", len(images_without_alt))
+
+if len(images_without_alt) == 0:
+    print("Tüm görsellerde alt etiketi var.")
+else:
+    print("Bazı görsellerde alt etiketi eksik.")
